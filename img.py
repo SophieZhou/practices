@@ -10,7 +10,8 @@ def fun(a,b,*args):
 a = 1
 b = 0
 alst = [2,3,4,5]
-blst = *alst
+print (alst)
+print (*alst)
 print (fun(a,b, *alst))
 
 # In[]
