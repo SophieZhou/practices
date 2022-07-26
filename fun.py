@@ -51,5 +51,4 @@ kwdict = {'k1':6,'k2':7,'k3':8,'k4':9}
 
 print (plus_all(a,b,*alst,**kwdict))
 
-
 # In[]
