@@ -28,7 +28,17 @@ b = 1
 total, avg = fun(a,b, 2,3,4,5 ) # 
 print (total)
 print (avg )
-    
+# In[]
+def fun(a,b):
+    if a >b:
+        return a 
+    else :
+        return b 
+
+a = 1
+b =2
+res = fun(a,b)
+print (res)    
 # In[]
 '''
 variable length arguments in Python
