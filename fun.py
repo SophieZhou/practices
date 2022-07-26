@@ -111,8 +111,44 @@ print(random.choices(a,cum_weights=[1,1,1,1,1],k=6))
 # from modulename import *  # you can visit all from modulename, but it is not recommended.
 
 # In[]
+'''
+read txt 
+'''
 filename = ''
 with open(filename,'r') as fn:
     lines = fn.readlines()
 for line in lines:
     print (line )
+# In[]
+'''
+read csv
+'''
+import csv
+ 
+filename='test_user_data.csv'
+data = []
+with open(filename) as csvfile:
+    csv_reader = csv.reader(csvfile)  # 使用csv.reader读取csvfile中的文件
+    #header = next(csv_reader)        # 读取第一行每一列的标题
+    for row in csv_reader:            # 将csv 文件中的数据保存到data中
+        data.append(row[0])           # 选择某一列加入到data数组中
+    print(data)
+
+# In[]
+'''
+read xlsx   the code can not run
+'''
+import xlrd
+#打开excel
+wb = xlrd.open_workbook('test_user_data.xlsx')
+#按工作簿定位工作表
+sh = wb.sheet_by_name('TestUserLogin')
+print(sh.nrows)#有效数据行数
+print(sh.ncols)#有效数据列数
+print(sh.cell(0,0).value)#输出第一行第一列的值
+print(sh.row_values(0))#输出第一行的所有值
+#将数据和标题组合成字典
+print(dict(zip(sh.row_values(0),sh.row_values(1))))
+#遍历excel，打印所有数据
+for i in range(sh.nrows):
+    print(sh.row_values(i))
