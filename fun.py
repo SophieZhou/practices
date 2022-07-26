@@ -1,5 +1,34 @@
 # -*- coding: utf-8 -*-
+# In[]
+def fun():
+    print ('Hello world.')
+res = fun()
+print (res )
 
+# In[]
+def fun(a,b):
+    res = a+b
+    return res 
+a =1
+b = 1
+res = fun(a,b)
+print (res )
+
+# In[]
+def fun(a,b,*args):
+    total = a+b
+    n = 2
+    for arg in args:
+        total = total + arg 
+        n  = n+1
+    avg = total/n
+    return total,avg
+a = 0
+b = 1
+total, avg = fun(a,b, 2,3,4,5 ) # 
+print (total)
+print (avg )
+    
 # In[]
 '''
 variable length arguments in Python
