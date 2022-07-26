@@ -148,6 +148,48 @@ print(random.choices(a,cum_weights=[1,1,1,1,1],k=6))
 # import modulename     # modulename.method/variable 
 # from modulename import method   # you can just visit the method 
 # from modulename import *  # you can visit all from modulename, but it is not recommended.
+# In[]
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jul 24 12:36:49 2022
+
+@author: Administrator
+"""
+
+# In[]
+
+# In[]
+alst = [1,2,3]
+blst = [4,5,6]
+clst = [4,5,6,7,8]
+
+zipped = zip(alst,blst)     # 打包为元组的列表
+
+for z in zipped:
+    print (z)
+
+# In[]
+for a,b in zip(alst,blst):
+    print (a,b)
+
+for a,c in zip(alst,clst):
+    print (a,c)
+
+for c,a in zip(clst,alst):
+    print (c,a)
+    
+    
+# In[]
+    
+def square(x):
+    return x ** 2
+ 
+# 计算列表各个元素的平方
+map(square, [1,2,3,4,5]) # <map at 0x17206b29630>
+# 使用list()转换为列表
+list(map(square, [1,2,3,4,5])) # [1, 4, 9, 16, 25]
+# 使用lambda匿名函数
+list(map(lambda x: x ** 2, [1, 2, 3, 4, 5])) # [1, 4, 9, 16, 25]
 
 # In[]
 '''
@@ -164,7 +206,7 @@ read csv
 '''
 import csv
  
-filename='test_user_data.csv'
+filename='test.csv'
 data = []
 with open(filename) as csvfile:
     csv_reader = csv.reader(csvfile)  # 使用csv.reader读取csvfile中的文件
@@ -179,9 +221,9 @@ read xlsx   the code can not run
 '''
 import xlrd
 #打开excel
-wb = xlrd.open_workbook('test_user_data.xlsx')
+wb = xlrd.open_workbook('test.xlsx')
 #按工作簿定位工作表
-sh = wb.sheet_by_name('TestUserLogin')
+sh = wb.sheet_by_name('本科')
 print(sh.nrows)#有效数据行数
 print(sh.ncols)#有效数据列数
 print(sh.cell(0,0).value)#输出第一行第一列的值
