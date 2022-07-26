@@ -152,3 +152,5 @@ print(dict(zip(sh.row_values(0),sh.row_values(1))))
 #遍历excel，打印所有数据
 for i in range(sh.nrows):
     print(sh.row_values(i))
+
+# In[]
