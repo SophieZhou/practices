@@ -52,3 +52,67 @@ kwdict = {'k1':6,'k2':7,'k3':8,'k4':9}
 print (plus_all(a,b,*alst,**kwdict))
 
 # In[]
+import os 
+help(os.makedirs)
+
+help (os.mkdir)
+
+help(os.path.exists)
+# In[]
+import os 
+dirpath = 'E:\python\code'
+if not os.path.exists(dirpath):
+    os.makedirs(dirpath) 
+
+# In[]
+import sys
+sys.path.append('E:\python\code')
+print (sys.path)
+
+# In[]
+import random
+help (random.randint)
+# In[]
+import random 
+i = random.randint(0,10)
+print (i)
+# In[]
+import random
+help (random.uniform)
+u = random.uniform(0,1)
+print (u)
+
+# In[]
+import random 
+print (dir(random))
+
+# In[]
+help (random.betavariate)
+
+# In[]
+import random
+help (random.choices)
+# In[]
+import random
+print(random.choice('choice')) 
+
+# In[]
+import random
+a = [1,2,3,4,5]
+print(random.choices(a,k=6))
+print(random.choices(a,weights=[0,0,1,0,0],k=6))
+print(random.choices(a,weights=[1,1,1,1,1],k=6))
+print(random.choices(a,cum_weights=[1,1,1,1,1],k=6))
+
+# In[]
+# module
+# import modulename     # modulename.method/variable 
+# from modulename import method   # you can just visit the method 
+# from modulename import *  # you can visit all from modulename, but it is not recommended.
+
+# In[]
+filename = ''
+with open(filename,'r') as fn:
+    lines = fn.readlines()
+for line in lines:
+    print (line )
