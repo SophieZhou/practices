@@ -31,4 +31,5 @@ res = cv2.resize(img,(2*width, 2*height), interpolation = cv2.INTER_CUBIC)
 
 
 # In[]
-
+import cv2
+img = cv2.imread('messi.jpg')
