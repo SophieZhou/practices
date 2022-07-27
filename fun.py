@@ -1,4 +1,81 @@
 # -*- coding: utf-8 -*-
+# In[]
+'''
+practise
+'''
+# In[]
+# 判断回文
+def is_palindrome(str_input):
+    """
+    判断字符串string是回文
+    :param string:
+    :return:
+    """
+    len_str = len(str_input)
+    count = 1
+    i=0
+    while i <= (len_str/2):
+        if str_input[i] == str_input[-i-1]:#str_input[len_str-i-1]:
+            count = 1
+            i += 1
+        else:
+            count = 0
+            break 
+    if count == 1:
+        return True 
+    else:
+        return False 
+
+
+print(is_palindrome('abcddcba'))
+print(is_palindrome('pythonohtyp'))
+print(is_palindrome('bookkob'))
+# In[]
+# In[]
+# 求一个3*3矩阵中对角线上元素之和
+def fun_add (lst):
+    res = 0 
+    for i in range (len(lst)):
+        for j in range (len(lst[0])) :
+            row = lst[i]
+            ele = row[j]
+            if i==j:
+                res = res + ele
+    return res         
+lst = [
+    [3,5,6],
+    [4,7,8],
+    [2,4,9]
+]
+print (len(lst))
+print (len(lst[0]))
+print (fun_add(lst))
+
+# In[]
+#自定义 len() 函数
+def my_len(s_input):
+    num = 0
+    for s in s_input:
+        num = num+1 
+    return num
+
+
+
+
+
+
+
+# In[]
+
+# bubble sort 冒泡排序
+def bubble_sort(alst):
+    pass 
+
+# In[]
+# 选择排序
+def select_sort(alst):
+    pass 
+
 
 # In[]
 # static analysis tool,mypy 
