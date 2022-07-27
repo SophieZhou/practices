@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+
+# In[]
+# static analysis tool,mypy 
+def add(a:int,b:int)->int:
+    return a+b
+print (add(1,2))
+print (add('s',2))
+
 # In[]
 def fun():
     print ('Hello world.')
