@@ -61,7 +61,14 @@ def my_len(s_input):
 
 
 
-
+# In[]
+def fun(a,b):
+    return a*b,a+b
+a = 1
+b = 2
+[res1,res2] = fun(a,b)
+print (res1)
+print (res1,res2)
 
 
 
@@ -320,3 +327,27 @@ for i in range(sh.nrows):
     print(sh.row_values(i))
 
 # In[]
+res = list(map(lambda x: x ** 2, [1, 2, 3, 4, 5]))
+print (res)
+
+# In[]
+res = [x**2 for x in [1,2,3,4,5]]
+print (res)
+# In[]
+def square(x) :         # 计算平方数
+    return x ** 2
+for x in [1,2,3,4,5]:
+    square(x)
+
+# In[]
+res = list(map(square, [1,2,3,4,5])) 
+print (res)
+
+# In[]
+alst = [1,2,3,4]
+blst = [1,4,9,15]
+res = list(True if x**2==y else False for x,y in zip(alst,blst))
+print (res)
+
+# In[]
+
