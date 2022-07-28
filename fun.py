@@ -346,7 +346,7 @@ print (res)
 # In[]
 alst = [1,2,3,4]
 blst = [1,4,9,15]
-res = list(True if x**2==y else False for x,y in zip(alst,blst))
+res = [True if x**2==y else False for x,y in zip(alst,blst)]
 print (res)
 
 # In[]
