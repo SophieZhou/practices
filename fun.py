@@ -351,3 +351,8 @@ print (res)
 
 # In[]
 
+data_dict = {}
+data_dict['a'] = 10
+data_dict.setdefault('b',2)
+data_dict.setdefault('b',5)
+print (data_dict)
