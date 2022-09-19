@@ -82,7 +82,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
-# 当resize后，图像变小了，那么插入方式建议。
+# 当resize后，图像变小了，那么插入方式建议INTER_AREA。
 rwidth = int(img.shape[1]*0.5)
 rheight = int(img.shape[0]*0.5)
 rimg4 = cv2.resize(img,dsize=(rwidth, rheight),fx=1,fy=1,interpolation=cv2.INTER_AREA)
@@ -90,3 +90,4 @@ cv2.imshow("resize messi4", rimg4)
 print ('resize image4: ',rimg4.shape) # (148, 237, 3)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
