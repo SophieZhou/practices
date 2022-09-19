@@ -297,3 +297,36 @@ print (f'without:{timeit(without_for, number=10000)}')
 # In[]
 a = 10
 print (a)
+
+# In[]
+tinydict = {'Name': 'Zara', 'Age': 7}
+tinydict2 = {'Sex': 'female', 'Age': 8}
+
+tinydict.update(tinydict2)
+print ("Value : %s" %  tinydict)
+
+
+# In[]
+import numpy as np
+
+test_arr = np.array([0.001,0.002])
+print(' '.join([str(a) for a in test_arr]))
+
+
+# In[]
+# 首先获得Iteration对象
+it = iter([1,2,3,4,5])
+# 循环
+while True:
+    try:
+        # 获得下一个值
+        x = next(it)
+        print(x)
+    except StopIteration:
+        # 遇到StopIteration就退出循环
+        break
+
+# In[]
+oldset = {1,2,3,4}
+newset = {1,2,3}
+print (oldset.intersection(newset))
