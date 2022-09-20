@@ -4,12 +4,15 @@ import operator
 import csv
 import time
 import os
-import threading
 from time import ctime
 from multiprocessing import Process
 import cv2 
-# thread_lock = threading.Lock()
-# thread_exit = False
+ 
+'''
+当你有多个视频文件需要同时处理时，可以试着采用并行的形式进行，会大大提升工作效率。以下只是一个简单的示例，我只是简单地把视频都进来然后用图像形式保存了
+下来，实际应用中根据需要修改。这里的cv2.imwrite，我们再单独找时间进行讲解。其中多进程并行的使用，可以参考python的相关教程。也有多线程的读视频，程序也有，但是
+我感觉没有进程更明了。
+'''
 
 def read_video(video_file):
     cap = cv2.VideoCapture(video_file)
