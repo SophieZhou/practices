@@ -22,3 +22,37 @@ if args.cubic:
 
 if args.test_hand:
     print ('no different')
+
+# In[]
+import random
+print (random.randint(3,5))
+# In[]
+import random
+
+# 随机数不一样
+random.seed()
+print('随机数1：',random.random())
+random.seed()
+print('随机数2：',random.random())
+
+# 随机数一样
+random.seed(1)
+print('随机数3：',random.random())
+random.seed(1)
+print('随机数4：',random.random())
+random.seed(2)
+print('随机数5：',random.random())
+
+'''
+随机数1： 0.7643602170615428
+随机数2： 0.31630323818329664
+随机数3： 0.13436424411240122
+随机数4： 0.13436424411240122
+随机数5： 0.9560342718892494
+'''
+# In[]
+import numpy as np
+
+box=np.array([0,1,2,3])
+center = (box[0:2]+box[2:4])/2
+print (center)
