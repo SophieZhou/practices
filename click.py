@@ -20,12 +20,6 @@ def draw_rectangle(event,x,y,flags,param):
 
 
 
-
-
-
-
-
-
 # 创建图像与窗口并将窗口与回调函数绑定
 img=np.zeros((512,512,3),np.uint8)
 cv2.namedWindow('image')
