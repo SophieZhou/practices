@@ -5,6 +5,14 @@ import numpy as np
 from os import path
 import pickle
 
+
+'''
+关于camera id 此处需要稍微说几句。一般我们测试时，可能会通过USB使用多个摄像头，也可能是笔记本自带摄像头。这个时候，通过id号来读摄像头的图像或者视频，
+就要关于摄像头的id号到底对应哪个摄像头。在ubuntu下，我们知道打开笔记本自带摄像头是用茄子命令，即cheese，而查看摄像头的的id号，一般可以通过 ls /dev/video*,
+这个命令是将所有摄像头设备都打印出来，比如打印出来有/dev/video0 /dev/video1，说明该电脑识别到两个摄像头，此时假设笔记本内置摄像头是video0,注意未必一定是0，需要测试，
+我自己笔记本上外接USB摄像头时，就会出现外接的摄像头是video0.此时如果我们想使用别的摄像头video1呢， cheese —device=/dev/video1，这样就打开了另外一个摄像头了。
+当然你也可以通过读摄像头的属性从而读到是第几个摄像头，这个网上有资料，稍微麻烦点。具体windows下，其实差不多，windows下可以通过设备查找。
+'''
 cam_idx = 0
 cam_cap = cv2.VideoCapture(cam_idx)#, cv2.CAP_DSHOW)  
 
