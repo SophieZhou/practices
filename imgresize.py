@@ -91,3 +91,4 @@ print ('resize image4: ',rimg4.shape) # (148, 237, 3)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+#tips:容易犯错的地方,img.shape给出来的结果是(h,w)，但是resize时，dsize传入的顺序是(w,h)
