@@ -13,7 +13,7 @@ int 	interpolation = INTER_LINEAR
 
 Python:
 dst	=	cv.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]	)
-各个参数可以参考c++版本的数据类型。简单解释如下：
+各个参数可以参考c++版本的数据类型，注意c++和python两者参数顺序有不同。简单解释如下：
 参数	类型	是否必须指定	具体含义
 src	numpy.ndarray	是	     原图像
 dsize	tuple<int>	是	     缩放后的图像大小
