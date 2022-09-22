@@ -5,6 +5,19 @@
 '''
 
 import cv2 
+
+# python3
+def decode_fourcc(cc):
+    return "".join([chr((int(cc) >> 8 * i) & 0xFF) for i in range(4)])
+
+videofile = 'SampleVideo_1280x720_1mb.mp4'
+video_cap = cv2.VideoCapture(videofile)
+fourcc = video_cap.get(cv2.CAP_PROP_FOURCC)
+dcfourcc = decode_fourcc(fourcc)
+print(dcfourcc)
+
+size = (video_cap.get(3),video_cap.get(4))
+
 fps = 10
 size = (640,480) # width,height
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
@@ -13,8 +26,12 @@ VideoWriter = cv2.VideoWriter(videofile, fourcc,fps,size )
 
 # 将文件夹中的图像保存为一个video或者将视频文件从新输出保存为一个video.
 while True:
-    img = cv2.imread(filepath)
+    ret, img = video_cap.read()
+    if not ret:
+        break
+    cv2.imshow('origin image',img)
+    cv2.waitKey(20)
     VideoWriter.write(img)
-
-VideoWriter.release()
+    
 cv2.destroyAllWindows()
+VideoWriter.release()
