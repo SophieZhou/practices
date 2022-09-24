@@ -35,3 +35,7 @@ while True:
     
 cv2.destroyAllWindows()
 VideoWriter.release()
+
+'''
+Tips:写入的图大小必须是一样的，因此你想保存成一个视频，最好确认一下。
+'''
