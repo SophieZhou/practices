@@ -84,8 +84,8 @@ if cv.waitKey(0) & 0xff==ord('q'):
 '''
 circle
 void cv::circle	(	InputOutputArray 	img,
-Point 	center,
-int 	radius,
+Point 	center,  # 圆心
+int 	radius,  # 半径
 const Scalar & 	color,
 int 	thickness = 1,
 int 	lineType = LINE_8,
@@ -103,8 +103,36 @@ if cv.waitKey(0) & 0xff==ord('q'):
 
 '''
 text
+void cv::putText	(	InputOutputArray 	img,
+const String & 	text,
+Point 	org,
+int 	fontFace,
+double 	fontScale,
+Scalar 	color,
+int 	thickness = 1,
+int 	lineType = LINE_8,
+bool 	bottomLeftOrigin = false 
+)		
+Python:
+cv.putText(	img, text, org, fontFace, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]]	) ->	img
+
 '''
+import time 
+import cv2
+cap = cv2.VideoCapture(0)
+while (1):  
+    ret, img = cap.read()
 
+    text = 'camera is ready.'
+    import random 
+    indx = random.randint(0,len(text))
+    # 图片 添加的文字 位置 字体 字体 大小 字体颜色 字体粗细
+    cv2.putText(img, text, (5,5+indx*10 ), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
+    cv2.imshow("image", img)
+    if cv2.waitKey(0) & 0xFF == ord('q'):
+        break
+cap.release()  
+cv2.destroyAllWindows()  
 
-
-#Tips:此处注意，是两个点，但是很多数据集给的标注信息是左上角的点和宽高，所以你要转换一次。
+#Tips:此处注意，是两个点，但是很多数据集给的标注信息是左上角的点和宽高，所以你要转换一次。同时各个地方坐标点是整数值，这个可千万要记住，
+#否则提示很多错误。其实也很好理解，这几种方法是通过改变图像像素点像素值来进行画图的，因此必须是整数。
