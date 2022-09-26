@@ -35,7 +35,7 @@ import cv2 as cv
 # Create a black image
 img = cv.imread('messi.jpg')
 # Draw a diagonal blue line with thickness of 5 px
-cv.line(img,(0,0),(511,511),(255,0,0),lineType = cv.LINE_AA)
+cv.line(img,(0,0),(511,511),(255,0,0),lineType = cv.LINE_AA,shift =0)
 cv.imshow('img line ',img)
 if cv.waitKey(0) & 0xff==ord('q'):
     cv.destroyAllWindows()
@@ -64,16 +64,42 @@ shift	Number of fractional bits in the point coordinates.
 我喜欢首先通过C++版本的函数来看函数，因为输入输出数据类型一目了然。从参数来看，输入第一个参数是图像，第2，3个参数是坐标点，
 严格来说是矩形左上角、右下角的两点，紧接着是颜色，这里也是，如果是灰度可以只有一个scalar,如果是彩色，按照BGR顺序传参。
 接着的参数thickness是线的厚度，肯定是这个数越大，画出来的线越宽。然后是线的类型，可以看一下一下几种可选，其中LINE_8是默认的。
-FILLED Python: cv.FILLED
+这里线的类型和我们普通意义上的是实线、虚线等这种不一样，由于我们这里画线其实是改变了image像素点的颜色，因此这里的线的类型是这个
+意义，就是都是怎么改变像素点颜色的算法，具体可以参考官方文档。
 LINE_4 Python: cv.LINE_4 4-connected line
 LINE_8 Python: cv.LINE_8 8-connected line
 LINE_AA Python: cv.LINE_AA antialiased line
 
 '''
 
+import cv2
+img = cv2.imread(r'messi.jpg')
+print(img.shape)  
+cv2.rectangle(img, (120, 10), (240, 100), (0, 255, 0), 2)
+cv2.imshow("rectangle", img)
+if cv.waitKey(0) & 0xff==ord('q'):
+    cv.destroyAllWindows()
+
+
 '''
 circle
+void cv::circle	(	InputOutputArray 	img,
+Point 	center,
+int 	radius,
+const Scalar & 	color,
+int 	thickness = 1,
+int 	lineType = LINE_8,
+int 	shift = 0 
+)		
+Python:
+cv.circle(	img, center, radius, color[, thickness[, lineType[, shift]]]	) ->	img
 '''
+cv2.circle(img,(80,80),30,(0,0,255),-1)
+
+cv2.imshow('img',img)
+
+if cv.waitKey(0) & 0xff==ord('q'):
+    cv.destroyAllWindows()
 
 '''
 text
