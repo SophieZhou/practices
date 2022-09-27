@@ -130,7 +130,7 @@ while (1):
     text = 'camera is ready.'
     import random 
     indx = random.randint(0,len(text))
-    # 图片 添加的文字（字符串） 位置（整型） 字体 字体大小 字体颜色(BGR顺序) 字体粗细
+    # 图片 添加的文字（字符串） 位置（整型，x,y） 字体 字体大小 字体颜色(BGR顺序) 字体粗细
     cv2.putText(img, text, (5,5+indx*10 ), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
     cv2.imshow("image", img)
     if cv2.waitKey(0) & 0xFF == ord('q'):
