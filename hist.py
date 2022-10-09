@@ -82,6 +82,17 @@ exit()
 
 '''
 equalizeHist(img)
+What is Histogram Equalization?
+It is a method that improves the contrast in an image, in order to stretch out the intensity range (see also the corresponding Wikipedia entry).
+To make it clearer, from the image above, you can see that the pixels seem clustered around the middle of the available range of intensities. What Histogram Equalization does is to stretch out this range. Take a look at the figure below: The green circles indicate the underpopulated intensities. After applying the equalization, we get an histogram like the figure in the center.
+The resulting image is shown in the picture at right.
+
+void cv::equalizeHist	(	InputArray 	src,
+OutputArray 	dst 
+)		
+Python:
+cv.equalizeHist(	src[, dst]	) ->	dst
+
 
 '''
 import cv2 as cv
