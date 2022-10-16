@@ -39,7 +39,7 @@ Use the OpenCV function cv::split to divide an image into its correspondent plan
 To calculate histograms of arrays of images by using the OpenCV function cv::calcHist
 To normalize an array by using the function cv::normalize
 '''
-
+# 彩色图分别计算各个通道的histogram
 import cv2 as cv
 import numpy as np
 # import argparse
