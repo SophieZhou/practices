@@ -8,6 +8,6 @@
 每一次实践都是一次纠错的过程，希望代码能写的越来越简练，bug越来越少。
 
 
-![image](0028.jpg)
+![image](exam.jpg)
 
 why the readme can not track on git.
